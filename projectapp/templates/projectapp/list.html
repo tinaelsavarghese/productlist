@@ -1,0 +1,51 @@
+{% extends "projectapp/base.html" %}
+{% block content %}
+<table class="table table-borderless" style="width:100%">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <th>description</th>
+            <th>base unit of measure</th>
+            <th>Project unit of measure(puom)</th>
+            <th>conversion factor</th>
+            <th>contracting entry ref.</th>
+            <th>material type</th>
+            <th>masterformat code</th>
+            <th>uniformat</th>
+            <th>RES code</th>
+            <th>WBS code</th>
+            </td>
+            <td>
+                <a href="{% url 'product_insert' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> +Add New Material
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in product_list %}
+            <tr>
+                <td>{{ product.edescription }}</td>
+                <td>{{ product.ebaseunitofmeasure }}</td>
+                <td>{{ product.eprojectunitofmeasure }}</td>
+                <td>{{ product.econversionfactor }}</td>
+                 <td>{{ product.econtractingentryref }}</td>
+                 <td>{{ product.ematerialtype }}</td>
+                 <td>{{ product.emasterformatcode }}</td>
+                <td>{{ product.euniformat }}</td>
+                <td>{{ product.eRBScode }}</td>
+                <td>{{ product.eWBSCODE}}</td>
+
+            </tr>
+       <form action="{% url 'product_list'  %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

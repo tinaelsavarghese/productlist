@@ -1,0 +1,29 @@
+{% extends "projectapp/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form.edescription|as_crispy_field}}
+    {{form.ebaseunitofmeasure|as_crispy_field}}
+    {{form.eprojectunitofmeasure|as_crispy_field}}
+    {{form.econversionfactor|as_crispy_field}}
+    {{form.econtractingentryref|as_crispy_field}}
+    {{form.ematerialtype|as_crispy_field}}
+    {{form.emasterformatcode|as_crispy_field}}
+    {{form.euniformat|as_crispy_field}}
+    {{form.eRBScode|as_crispy_field}}
+    {{form.eWBSCODE|as_crispy_field}}
+        <div>
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                Submit</button>
+        </div>
+        <div>
+            <a href="{% url 'product_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Back to list
+            </a>
+        </div>
+
+</form>
+{% endblock content %}
