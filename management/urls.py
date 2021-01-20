@@ -18,11 +18,10 @@ from django.urls import path,include
 from projectapp import views
 
 urlpatterns = [
-    #path('', views.add, name='home-page'),
 
-    path('', views.product_form, name='product_insert'),  # get and post req. for insert operation
-    #path('<int:id>/', views.product_form, name='product_update'),  # get and post req. for update operation
-    #path('delete/<int:id>/', views.product_delete, name='product_delete'),
+
+    path('', views.product_form, name='product_insert'),
+
     path('list/', views.product_list, name='product_list')
   ]
 
