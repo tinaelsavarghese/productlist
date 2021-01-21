@@ -12,6 +12,6 @@ class products(models.Model):
     eRBScode= models.IntegerField()
     eWBSCODE=models.IntegerField()
 
-from django.db import models
+
 
 # Create your models here.
